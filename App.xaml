@@ -1,0 +1,11 @@
+<Application x:Class="CodexClaudeUsageWidget.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             ShutdownMode="OnExplicitShutdown">
+  <Application.Resources>
+    <SolidColorBrush x:Key="SurfaceBrush" Color="#171A20" />
+    <SolidColorBrush x:Key="CardBrush" Color="#20242C" />
+    <SolidColorBrush x:Key="MutedBrush" Color="#9BA3B2" />
+    <SolidColorBrush x:Key="AccentBrush" Color="#9CE2B9" />
+  </Application.Resources>
+</Application>

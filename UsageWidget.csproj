@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>CodexClaudeUsageWidget</AssemblyName>
+    <RootNamespace>CodexClaudeUsageWidget</RootNamespace>
+    <PublishSingleFile Condition="'$(RuntimeIdentifier)' != ''">true</PublishSingleFile>
+    <EnableCompressionInSingleFile Condition="'$(RuntimeIdentifier)' != ''">true</EnableCompressionInSingleFile>
+    <IncludeNativeLibrariesForSelfExtract Condition="'$(RuntimeIdentifier)' != ''">true</IncludeNativeLibrariesForSelfExtract>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="tests/**/*.cs" />
+  </ItemGroup>
+</Project>
