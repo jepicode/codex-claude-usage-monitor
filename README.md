@@ -14,19 +14,19 @@ dotnet restore
 dotnet run
 ```
 
-Build an installable, self-contained Windows x64 package:
+Build the Windows x64 installer (developer machine only; requires the .NET 10 SDK and Inno Setup 6):
 
 ```powershell
 .\build-installer.ps1
 ```
 
-The ZIP contains a self-contained app plus install and uninstall scripts. Extract it, then run `powershell.exe -ExecutionPolicy Bypass -File .\Install.ps1` to install the app and add a Start menu shortcut. Run `powershell.exe -ExecutionPolicy Bypass -File .\Uninstall.ps1` from the extracted package to remove the app; saved sign-ins and usage cache are kept. The build publishes a compressed single-file bundle with the .NET runtime included, so end users do not need to install .NET. Compression reduces output size at the cost of a small startup extraction overhead.
+The build creates `dist\CodexClaudeUsageWidget-Setup.exe`. End users do not need PowerShell or .NET: double-click the setup executable and follow the installer. It installs per-user, adds a Start menu shortcut, and offers an optional desktop shortcut. Uninstall it through **Settings → Apps**; saved sign-ins and usage cache are kept. The installer is not code-signed, so Windows SmartScreen may show a warning.
 
 ## Downloads
 
-Open [GitHub Releases](https://github.com/jepicode/codex-claude-usage-monitor/releases) and download the newest listed Windows x64 package. Each release includes `CodexClaudeUsageWidget-Setup.zip` and `SHA256SUMS.txt`; the checksum file verifies the downloaded ZIP.
+Open [GitHub Releases](https://github.com/jepicode/codex-claude-usage-monitor/releases) and download the newest listed Windows x64 setup executable. Each release includes `CodexClaudeUsageWidget-Setup.exe` and `SHA256SUMS.txt` to verify the download.
 
-Releases are built from version tags (`v*`) by GitHub Actions. The workflow runs the quota parser tests, builds the self-contained installer, validates its contents, and publishes the ZIP with generated release notes.
+Releases are built from version tags (`v*`) by GitHub Actions. The workflow runs the quota parser tests, builds the Inno Setup installer, verifies its checksum, and publishes both files with generated release notes.
 
 
 Run quota response tests with:
