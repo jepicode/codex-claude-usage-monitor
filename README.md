@@ -24,7 +24,7 @@ The ZIP contains a self-contained app plus install and uninstall scripts. Extrac
 
 ## Downloads
 
-Download the latest Windows x64 installer from [GitHub Releases](https://github.com/jepicode/codex-claude-usage-monitor/releases/latest). Each release includes `CodexClaudeUsageWidget-Setup.zip` and `SHA256SUMS.txt`; the checksum file verifies the downloaded ZIP.
+Open [GitHub Releases](https://github.com/jepicode/codex-claude-usage-monitor/releases) and download the newest listed Windows x64 package. Each release includes `CodexClaudeUsageWidget-Setup.zip` and `SHA256SUMS.txt`; the checksum file verifies the downloaded ZIP.
 
 Releases are built from version tags (`v*`) by GitHub Actions. The workflow runs the quota parser tests, builds the self-contained installer, validates its contents, and publishes the ZIP with generated release notes.
 
